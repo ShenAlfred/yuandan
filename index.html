@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>元旦嘉年华</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/flexible.js"></script>
+</head>
+<body>
+    <section class="body">
+        <div class="bg">
+            <div class="main-warp">
+                <h2 class="dl-title">商赢金服开年福利</h2>
+                <span class="dl-asi">海量加息券免费领</span>
+                <div class="form-warp">
+                    <div class="form-line al">
+                        <input id="phone" class="form-controller" type="text" placeholder="请输入您的手机号码领取优惠券">
+                    </div>
+                    <div class="form-line al">
+                        <div class="flex">
+                            <div class="form-control">
+                                <input id="picVeri" class="form-controller sm" type="text" placeholder="请输入图文验证码">
+                            </div>
+                            <div class="flex1">
+                                <div class="code-img">
+                                    <img class="v-pic-veri" src=""  height="100%" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bfc">
+                        <a href="javascript:;" class="lqbtn" id="registerOne">立即领取</a>
+                    </div>
+                    <p class="ac activity-time">
+                        活动时间：2017.1.1-2017.1.9
+                    </p>
+                </div>
+            </div>
+            <div class="cs">
+                <div class="activity-regulation">
+                    <div class="gz-img"></div>
+                    <div class="activity-detail">
+                        <ul class="gz">
+                            <li>
+                                1.使用产品:投资项目时选择使用加息券可增加年化收益,仅针对现平台房贷标产品使用
+                            </li>
+                            <li>
+                                2.使用时间:领取成功后10日内有效
+                            </li>
+                            <li>
+                                3.额外收益:使用加息券的项目,额外收益将在该项目到期后一次性返还至用户的个人账户。如提前退出则加息券失效并失去额外收益
+                            </li>
+                            <li>
+                                4.额外收益:使用加息券的项目,额外收益将在该项目到期后一次性返还至用户的个人账户。如提前退出则加息券失效并失去额外收益
+                            </li>
+                            <li>
+                                5.以上活动规则会不定期调整,最终解释权归商赢金服所有。
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="syjf"></div>
+                </div>
+            </div>
+        </div>
+        <div class="layer hide"></div>
+        <div class="dialog hide">
+            <div class="content-warp">
+                <div class="d-title">安全验证</div>
+                <div>
+                    <div id="msg_code-warp" class="">
+                        <div class="flex get-code-box">
+                            <div class="input-box">
+                                <input id="phoneCode" class="form-controller" type="text" placeholder="输入您的短信验证码"/>
+                            </div>
+                            <div class="flex1 ac">
+                                <button id="achoeveCode" class="count">
+                                    重新获取
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="pwd-warp" class="hide">
+                        <div class="get-code-box">
+                            <div class="input-box full">
+                                <input id="password" class="form-controller" type="text" placeholder="输入您的8-16位登录密码"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-group flex">
+                    <div class="flex1 ac border-right">
+                        <a id="cancel-dialog" href="javascript:;" class="btn cancel-btn">
+                            取消
+                        </a>
+                    </div>
+                    <div class="flex1 ac">
+                        <a id="registerTwo" href="javascript:;" class="btn confirm-btn">
+                            领取
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/register.js"></script>
+</body>
+</html>

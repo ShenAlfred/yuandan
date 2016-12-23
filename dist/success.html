@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>领取成功</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/flexible.js"></script>
+</head>
+<body>
+<section class="body">
+    <div class="success-bg">
+        <div class="dl-success">
+            <div class="dl-body"></div>
+        </div>
+        <p class="t-lq">您尾号&nbsp;<span id="wh">0041</span>&nbsp;的手机已领取下列卡券</p>
+    </div>
+    <div class="card-list">
+        <div class="card">
+            <div class="c-i">
+                <h2 class="card-type">【加息劵】</h2>
+                <div class="flex">
+                    <div class="card-percent border-right">
+                        <p class="act-percent">
+                            1.50
+                            <span>%</span>
+                        </p>
+                        <p class="act-sm">元旦活动奖励</p>
+                    </div>
+                    <div class="flex1">
+                        <div class="card-det">
+                            <p class="top-t">最多可投 5000 元</p>
+                            <p class="bottom-t">(用于现金投资房贷标)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="c-i">
+                <h2 class="card-type">【加息劵】</h2>
+                <div class="flex">
+                    <div class="card-percent border-right">
+                        <p class="act-percent">
+                            1.50
+                            <span>%</span>
+                        </p>
+                        <p class="act-sm">元旦活动奖励</p>
+                    </div>
+                    <div class="flex1">
+                        <div class="card-det">
+                            <p class="top-t">最多可投 5000 元</p>
+                            <p class="bottom-t">(用于现金投资房贷标)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="c-i">
+                <h2 class="card-type">【加息劵】</h2>
+                <div class="flex">
+                    <div class="card-percent border-right">
+                        <p class="act-percent">
+                            1.50
+                            <span>%</span>
+                        </p>
+                        <p class="act-sm">元旦活动奖励</p>
+                    </div>
+                    <div class="flex1">
+                        <div class="card-det">
+                            <p class="top-t">最多可投 5000 元</p>
+                            <p class="bottom-t">(用于现金投资房贷标)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="ttt fs24">
+        使用该手机号登录平台账户-我的卡券查看领取的卡券
+    </p>
+    <div class="syjf"></div>
+    <div class="cs">
+        <a href="https://act.sy7.com/subindex/wap/index.html" class="lqbtn-bg fs36" style="display: none;">
+            下载商赢金服APP
+        </a>
+        <div class="td-code-warp ac">
+            <div class="td-code">
+                <img src="images/td-code.jpg" alt="">
+            </div>
+            <div class="tta fs24">长按关注官方微信</div>
+        </div>
+    </div>
+</section>
+<script>
+
+    document.querySelector("#wh").innerHTML = getUrlParam("phone") || "?";
+
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg); //匹配目标参数
+        if (r != null) return unescape(r[2]);
+        return null; //返回参数值
+    }
+</script>
+</body>
+</html>

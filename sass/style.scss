@@ -1,0 +1,421 @@
+$defaultFontSize: 75;
+
+@function pxToRem($px) {
+  @return $px / $defaultFontSize * 1rem;
+}
+
+@mixin fontSize($px, $name) {
+  #{$name} {
+    font-size: ($px/2) * 1px;
+  }
+  [data-dpr="2"] #{$name} {
+    font-size: $px * 1px;
+  }
+
+  [data-dpr="3"] #{$name} {
+    font-size: ($px*1.5) * 1px;
+  }
+}
+
+html, body, p, ul, ol, li, dl, dd, h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+  padding: 0;
+}
+ul, ol, li {
+  list-style: none;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+.ac {
+  text-align: center;
+}
+.al {
+  text-align: left;
+}
+.bfc {
+  overflow: hidden;
+}
+.flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+.flex1 {
+  -webkit-box-flex:1;
+  -webkit-flex:1;
+  flex:1;
+}
+.flex-vc {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.flex-hc {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+html, body {
+  position: relative;
+  height: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+html {
+  font: 12px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+@include fontSize(24, '.fs24');
+
+@include fontSize(28, '.fs28');
+
+@include fontSize(36, '.fs36');
+
+.body {
+  max-width: 10rem;
+  margin: 0 auto;
+  background: #16275e;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.bg {
+  width: 10rem;
+  background: #16275e url('../images/banner.jpg') no-repeat center top;
+  background-size: contain;
+}
+.success-bg {
+  width: 10rem;
+  height: pxToRem(220);
+  background: url('../images/fireworks.png') no-repeat center top;
+  background-size: contain;
+}
+.main-warp {
+  padding-top: 5.4rem;
+  margin: 0 auto;
+  height: 9.8rem;
+  width: 9.2rem;
+  text-align: center;
+  background: url('../images/dl-bg.png') no-repeat center 5.4rem;
+  background-size: contain;
+}
+@include fontSize(36,".dl-title");
+.dl-title {
+  padding-top: pxToRem(80);
+  color: #f5544c;
+}
+@include fontSize(28, ".dl-asi");
+.dl-asi {
+  display: inline-block;
+  padding-top: pxToRem(30);
+  color: #666;
+}
+
+.form-warp {
+  padding-top: pxToRem(50);
+  width: pxToRem(530);
+  margin: 0 auto;
+}
+.form-line {
+  padding: pxToRem(30) pxToRem(40);
+  width: 100%;
+  background: #fff;
+  border-radius: pxToRem(100);
+  margin-bottom: pxToRem(20);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+input[type="text"] {
+  border: none;
+  height: 100%;
+  padding: 0;
+}
+@include fontSize(30, ".form-controller");
+.form-controller {
+  width: 100%;
+  height: 100%;
+}
+.form-control {
+  width: pxToRem(280);
+  border-right: 1px solid #dedede;
+}
+.code-img {
+  position: relative;
+  width: 100%;
+  height: pxToRem(46);
+  text-align: right;
+}
+.code-img img {
+  width: pxToRem(150);
+}
+.lqbtn {
+  display: block;
+  margin-top: pxToRem(30);
+  width: pxToRem(520);
+  height: pxToRem(98);
+  line-height: pxToRem(92);
+  color: #fef51a;
+  text-align: center;
+  text-decoration: none;
+  background: url('../images/btn.png') no-repeat center center;
+  background-size: contain;
+}
+.lqbtn-bg {
+  display: block;
+  margin: pxToRem(30) auto 0;
+  width: pxToRem(630);
+  height: pxToRem(95);
+  line-height: pxToRem(90);
+  color: #fef51a;
+  text-align: center;
+  text-decoration: none;
+  background: url('../images/btn-bg.png') no-repeat center center;
+  background-size: contain;
+}
+@include fontSize(36, ".lqbtn");
+
+.activity-time {
+  padding-top: pxToRem(20);
+  color: #f5544c;
+}
+@include fontSize(26, ".activity-time");
+
+.activity-regulation {
+  margin: pxToRem(60) auto 0;
+  width: pxToRem(690);
+}
+.activity-detail {
+  margin: pxToRem(40) 0;
+  background: rgba(0,0,0,.1);
+  padding: pxToRem(30);
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.gz-img {
+  width: pxToRem(690);
+  height: pxToRem(29);
+  background: url('../images/gz.png') no-repeat center center;
+  background-size: contain;
+}
+.syjf {
+  width: pxToRem(690);
+  height: pxToRem(24);
+  margin: 0 auto;
+  background: url('../images/syjf.png') no-repeat center center;
+  background-size: contain;
+}
+.cs {
+  background: #16275e;
+  padding-bottom: pxToRem(45);
+  overflow: hidden;
+}
+.gz li {
+  color: #fff;
+  margin-bottom: pxToRem(64);
+  line-height: 1.5;
+}
+.gz li:last-child {
+  margin-bottom: 0;
+}
+.layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.8);
+  z-index: 1;
+}
+.dialog {
+  position: fixed;
+  left: 50%;
+  top: pxToRem(320);
+  margin-left: -(pxToRem(325));
+  width: pxToRem(650);
+  height: pxToRem(425);
+  background: #fcfcfd;
+  border-radius: pxToRem(15);
+  overflow: hidden;
+  z-index: 2;
+}
+.dialog .content-warp {
+  padding-top: pxToRem(38);
+}
+@include fontSize(34, ".dialog .content-warp .d-title");
+.dialog .content-warp .d-title {
+  text-align: center;
+  color: #333;
+}
+
+.get-code-box {
+  margin: pxToRem(70) auto;
+  width: pxToRem(568);
+  height: pxToRem(108);
+  border-radius: pxToRem(5);
+  border: 1px solid #bebebe;
+}
+@include fontSize(28, ".get-code-box");
+.get-code-box .input-box {
+  width: pxToRem(330);
+  padding: pxToRem(30);
+  border-right: 1px solid #ededed;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.get-code-box .input-box.full {
+  width: 100%;
+  padding: pxToRem(38);
+  border-right: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.count {
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+  text-indent: 5px;
+  border: 0;
+  background: #fff;
+  color: #508cee;
+  padding: pxToRem(35) 0;
+}
+@include fontSize(30, ".count");
+.btn-group  {
+  height: pxToRem(92);
+  line-height: pxToRem(92);
+  border-top: 1px solid #dfdfdf;
+  overflow: hidden;
+}
+@include fontSize(34, ".cancel-btn");
+@include fontSize(34, ".confirm-btn");
+
+.btn {
+  display: block;
+  text-decoration: none;
+}
+.cancel-btn {
+  color: #999;
+}
+.confirm-btn {
+  color: #f26161;
+}
+.border-right {
+  border-right: 1px solid #dfdfdf;
+}
+.dl-success {
+  margin: 0 auto;
+  height: pxToRem(112);
+  width: pxToRem(480);
+  padding-top: pxToRem(50);
+}
+.dl-body {
+  position: relative;
+  margin: 0 auto;
+  width: pxToRem(489);
+  height: pxToRem(122);
+  background: url('../images/dl-text.png') no-repeat center center;
+  background-size: contain;
+}
+.t-lq {
+  padding-top: pxToRem(25);
+  color: #fff;
+  text-align: center;
+}
+.t-lq span {
+  color: #fff113;
+}
+@include fontSize(30, '.t-lq');
+.card-list {
+  margin: pxToRem(35) auto 0;
+  width: pxToRem(690);
+  padding: pxToRem(30);
+  background: rgba(0,0,0,.1);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.card {
+  width: pxToRem(630);
+  height: pxToRem(240);
+  background: url('../images/card.png') no-repeat center center;
+  background-size: contain;
+  margin-bottom: pxToRem(20);
+}
+.card:last-child {
+  margin-bottom: 0;
+}
+.card .c-i {
+  padding: pxToRem(30) 0 pxToRem(40) pxToRem(40);
+}
+.card-type {
+  padding-bottom: pxToRem(40);
+}
+@include fontSize(32, '.card-type');
+
+.card-percent {
+  width: pxToRem(200);
+}
+
+.act-percent {
+  color: #f54341;
+}
+@include fontSize(54, '.act-percent');
+@include fontSize(34, '.act-percent span');
+.act-sm {
+  color: #999;
+  padding-top: pxToRem(5);
+  letter-spacing: pxToRem(3);
+}
+@include fontSize(24, '.act-sm');
+.card-det {
+  padding-left: pxToRem(50);
+  line-height: 1.9;
+}
+
+.card-det .top-t {
+  color: #4d4d4d;
+}
+.card-det .bottom-t {
+  color: #666;
+}
+@include fontSize(30, '.card-det .top-t');
+@include fontSize(24, '.card-det .bottom-t');
+
+.ttt {
+  padding-top: pxToRem(40);
+  padding-bottom: pxToRem(48);
+  text-align: center;
+  color: #fff;
+}
+.td-code-warp {
+  width: pxToRem(230);
+
+  margin: pxToRem(50) auto 0;
+}
+.td-code {
+  width: pxToRem(210);
+  height: pxToRem(210);
+  margin: 0 auto;
+  background: #fff;
+  border-radius: pxToRem(5);
+  border: 1px solid #bebebe;
+  overflow: hidden;
+}
+.td-code img {
+  width: 100%;
+  height: 100%;
+}
+.tta {
+  padding-top: pxToRem(15);
+  color: #fff;
+}
