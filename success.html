@@ -14,67 +14,27 @@
         </div>
         <p class="t-lq">您尾号&nbsp;<span id="wh">0041</span>&nbsp;的手机已领取下列卡券</p>
     </div>
-    <div class="card-list">
-        <div class="card">
-            <div class="c-i">
-                <h2 class="card-type">【加息劵】</h2>
-                <div class="flex">
-                    <div class="card-percent border-right">
-                        <p class="act-percent">
-                            1.50
-                            <span>%</span>
-                        </p>
-                        <p class="act-sm">元旦活动奖励</p>
-                    </div>
-                    <div class="flex1">
-                        <div class="card-det">
-                            <p class="top-t">最多可投 5000 元</p>
-                            <p class="bottom-t">(用于现金投资房贷标)</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="c-i">
-                <h2 class="card-type">【加息劵】</h2>
-                <div class="flex">
-                    <div class="card-percent border-right">
-                        <p class="act-percent">
-                            1.50
-                            <span>%</span>
-                        </p>
-                        <p class="act-sm">元旦活动奖励</p>
-                    </div>
-                    <div class="flex1">
-                        <div class="card-det">
-                            <p class="top-t">最多可投 5000 元</p>
-                            <p class="bottom-t">(用于现金投资房贷标)</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="c-i">
-                <h2 class="card-type">【加息劵】</h2>
-                <div class="flex">
-                    <div class="card-percent border-right">
-                        <p class="act-percent">
-                            1.50
-                            <span>%</span>
-                        </p>
-                        <p class="act-sm">元旦活动奖励</p>
-                    </div>
-                    <div class="flex1">
-                        <div class="card-det">
-                            <p class="top-t">最多可投 5000 元</p>
-                            <p class="bottom-t">(用于现金投资房贷标)</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="card-list" id="card-list">
+        <!--<div class="card">-->
+            <!--<div class="c-i">-->
+                <!--<h2 class="card-type">【加息劵】</h2>-->
+                <!--<div class="flex">-->
+                    <!--<div class="card-percent border-right">-->
+                        <!--<p class="act-percent">-->
+                            <!--1.50-->
+                            <!--<span>%</span>-->
+                        <!--</p>-->
+                        <!--<p class="act-sm">元旦活动奖励</p>-->
+                    <!--</div>-->
+                    <!--<div class="flex1">-->
+                        <!--<div class="card-det">-->
+                            <!--<p class="top-t">最多可投 5000 元</p>-->
+                            <!--<p class="bottom-t">(用于现金投资房贷标)</p>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
     </div>
     <p class="ttt fs24">
         使用该手机号登录平台账户-我的卡券查看领取的卡券
@@ -93,8 +53,41 @@
     </div>
 </section>
 <script>
+    var data = decodeURI(getUrlParam("data"));
+    var phone = getUrlParam("phone");
+    data = JSON.parse(data);
+    var string = "";
 
-    document.querySelector("#wh").innerHTML = getUrlParam("phone") || "?";
+    console.log(data);
+
+    document.querySelector("#wh").innerHTML = phone;
+    var cartList = document.querySelector("#card-list");
+
+    for(var i =0,len = data.length; i<len; i++) {
+        string += htmlTpl(data[i]);
+    }
+    cartList.innerHTML = string;
+
+    function htmlTpl(opt) {
+        return  '<div class="card">'+
+            '<div class="c-i">'+
+            '<h2 class="card-type">【'+ opt.couponName +'】</h2>'+
+            '<div class="flex">'+
+            '<div class="card-percent border-right">'+
+            '<p class="act-percent">'+ opt.amount + '<span>%</span>'+
+            '</p>'+
+            '<p class="act-sm">'+ opt.activityName +'</p>'+
+            '</div>'+
+            '<div class="flex1">'+
+            '<div class="card-det">'+
+            '<p class="top-t">最多可投'+ opt.limitUseAmount  +'元</p>'+
+            '<p class="bottom-t">'+ opt.useDesc +'</p>'+
+            '</div>'+
+            '</div>'+
+            '</div>'+
+            '</div>'+
+            '</div>';
+    }
 
     function getUrlParam(name) {
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象

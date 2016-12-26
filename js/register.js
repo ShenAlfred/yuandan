@@ -11,6 +11,7 @@ $(function(){
             'dev':'//customer.dev.sy8.com'
         }[ENV]
     }());
+
     var LS = localStorage;
     LS.clear();
     if(invite=='0000'){
@@ -19,7 +20,7 @@ $(function(){
     }
 
     if(invite!==LS.getItem('invite')){
-        LS.clear()
+        LS.clear();
     }
 
     LS.setItem('invite',invite);
@@ -153,9 +154,13 @@ $(function(){
             }),
             success:function(data){
                 if(data.resCode == "0000"){
+                    var result = data.resultList;
+                    console.log(result);
+                    var param_string = JSON.stringify(result);
                     var wh = LS.getItem('phone').slice(7);
-                    LS.clear();
-                    //window.location="/success.html?phone="+wh;
+                    param_string = encodeURI(encodeURI(param_string));
+                    //LS.clear();
+                    window.location = "/success.html?data="+param_string+"&phone="+wh;
                 }
             },
             error: function (data) {
